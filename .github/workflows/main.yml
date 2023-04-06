@@ -1,4 +1,4 @@
-name: Download Zip File
+name: Download and extract zip file
 
 on:
   push:
@@ -6,30 +6,25 @@ on:
       - main
 
 jobs:
-  download_zip_file:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Download Zip File
+
+      - name: Download zip file
+        run: wget https://ava5.androidfilehost.com/dl/s5esjZEkjHD1Pey-Mwkouw/1680891684/1395089523397939691/C7000ZHS3CRJ1_C7000ZZH3CRJ1_TGY.zip
+
+      - name: Extract tar file
+        run: tar -xvf AP.tar.md5
+
+      - name: Install gdrive
         run: |
-          curl -L -o file.zip https://ava5.androidfilehost.com/dl/s5esjZEkjHD1Pey-Mwkouw/1680891684/1395089523397939691/C7000ZHS3CRJ1_C7000ZZH3CRJ1_TGY.zip
-          unzip file.zip
-          tar -xvf AP*.tar.md5 boot.img.lz4
-          
-      - name: Commit changes
+          wget -O gdrive https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
+          chmod +x gdrive
+          sudo install gdrive /usr/local/bin/gdrive
+
+      - name: Upload to Google Drive
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          git commit -m "Add files"
-          - name: 'Upload Artifact'
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v3
-        with:
-         name: boot.im.lz4
-         path: boot.img.lz4
-      
-       
+          gdrive upload boot.img.lz4 --parent 1-jK6pC7I9Ohf1CdX7gON-tM2LC9hcSmn
