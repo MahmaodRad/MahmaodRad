@@ -15,9 +15,10 @@ jobs:
 
       - name: Download zip file
         run: curl -L -o file.zip https://ava5.androidfilehost.com/dl/s5esjZEkjHD1Pey-Mwkouw/1680891684/1395089523397939691/C7000ZHS3CRJ1_C7000ZZH3CRJ1_TGY.zip
-             unzip *zip 
+          unzip file.zip
+          tar -xvf AP*.tar.md5
       - name: Extract tar file
-        run: tar -xvf AP*.tar.md5
+        run: tar -xvf AP*.tar.md5 boot.img.lz4
 
       - name: Install gdrive
         run: |
