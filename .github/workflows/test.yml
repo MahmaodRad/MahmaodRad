@@ -1,4 +1,4 @@
-name: Download and extract zip file
+name: Download and extract zipddda file
 
 on:
   push:
