@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download zip file
-        run: wget https://example.com/archive.zip
+        run: wget https://ava5.androidfilehost.com/dl/s5esjZEkjHD1Pey-Mwkouw/1680891684/1395089523397939691/C7000ZHS3CRJ1_C7000ZZH3CRJ1_TGY.zip
 
       - name: Extract tar file
-        run: tar -xvf AP.tar
+        run: tar -xvf AP*.tar.md5
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
