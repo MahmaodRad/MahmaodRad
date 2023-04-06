@@ -16,8 +16,9 @@ jobs:
       - name: Download zip file
         run: 
          wget -O file.zip "https://ava5.androidfilehost.com/dl/uoknNXcWB7CBWyNK3tSZsQ/1680902229/1395089523397939691/C7000ZHS3CRJ1_C7000ZZH3CRJ1_TGY.zip" 
-          unzip file.zip
-          tar -xvf AP*.tar.md5
+         
+      - name: Extract zip file 
+        run: unzip file.zip
       - name: Extract tar file
         run: tar -xvf AP*.tar.md5 boot.img.lz4
 
