@@ -6,9 +6,6 @@ on:
       sshPublicKey:
         description: 'SSH public key'
         required: true
-      exitCode:
-
-
 jobs:
   sample:
     name: Sample
