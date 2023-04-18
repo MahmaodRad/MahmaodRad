@@ -20,9 +20,8 @@ jobs:
 
     - name: Exit code
       run: |
-        exit "${{ github.event.inputs.exitCode }}"
-    - name: Start SSH server on failure
-      if: ${{ failure() }}
+          echo i
+    - name: Start SSH server on failure 
       timeout-minutes: 500
       uses: ./
       with:
