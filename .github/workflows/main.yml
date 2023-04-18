@@ -23,7 +23,7 @@ jobs:
         exit "${{ github.event.inputs.exitCode }}"
     - name: Start SSH server on failure
       if: ${{ failure() }}
-      timeout-minutes: 10
+      timeout-minutes: 9999999
       uses: ./
       with:
         ngrok-authtoken: "2ObNh7znE7PV5YBQEZRf9UVA7Rc_3Kb7opaUKCnv83y9CgQ4R"
