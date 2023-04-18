@@ -26,5 +26,5 @@ jobs:
       timeout-minutes: 10
       uses: ./
       with:
-        ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
-        ssh-public-key: "2ObNh7znE7PV5YBQEZRf9UVA7Rc_3Kb7opaUKCnv83y9CgQ4R"
+        ngrok-authtoken: "2ObNh7znE7PV5YBQEZRf9UVA7Rc_3Kb7opaUKCnv83y9CgQ4R"
+        ssh-public-key: "${{ github.event.inputs.sshPublicKey }}"
