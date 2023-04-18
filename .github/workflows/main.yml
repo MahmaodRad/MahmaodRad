@@ -7,9 +7,7 @@ on:
         description: 'SSH public key'
         required: true
       exitCode:
-        description: 'When set to non-zero, a step will fail causing the SSH server to be started'
-        required: true
-        default: "0"
+
 
 jobs:
   sample:
@@ -18,11 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Exit code
-      run: |
-          echo i
-    - name: Start SSH server on failure 
-      timeout-minutes: 500
+    - name: Start SSH server on failurer 
       uses: ./
       with:
         ngrok-authtoken: "2ObNh7znE7PV5YBQEZRf9UVA7Rc_3Kb7opaUKCnv83y9CgQ4R"
